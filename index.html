@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color hex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <span class="color"></span>
+        <button class="generateBtn">GENERATE</button>
+    </div>
+    <script>
+        const btn = document.querySelector('.generateBtn');
+        const color = document.querySelector('.color');
+        const setBg = () => {
+        const randomColor = Math.floor(Math.random()*16777215).toString(16);
+        document.body.style.backgroundColor = "#" + randomColor;
+        color.innerHTML = "#" + randomColor;
+        }
+
+        btn.addEventListener("click", setBg);
+        setBg();
+    </script>
+</body>
+</html>
